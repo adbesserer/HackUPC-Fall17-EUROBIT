@@ -1,0 +1,8 @@
+Funcionamiento:
+
+	-counter.sh se dedica a apuntar en el fichero de listado_jugadaores.txt las MAC de los jugadores, cosa con la cual los identificaremos
+	-addplayers.sh se dedica a incrementar en la cantidad de jugadores por cada uno que entra en partida
+	-nplayers es el fichero en el que se almacena el numero de jugadores
+	-changing_file es el log
+	-reset.sh es el script que resetea ell numero de jugaores y el listado de jugadores
+
