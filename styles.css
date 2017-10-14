@@ -6,12 +6,10 @@ h1 {
     color: solid #ffffff;
 }
 
-button {
+#buttons {
     color: solid #ffffff;
-    position: relative;
     border: 3px solid #000000;
     height: 7em;
-    width: 7em;
     margin-top: 5%;
     left: 5%;
     right: 5%;
@@ -19,6 +17,21 @@ button {
     bottom: 10%
 }
 
-div {
+.left {
+    position: absolute;
+    width: 100px;
+    top: 0;
+}
+
+.centered {
+    display: inline-block;
     position: relative;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+textarea {
+    margin-left: 20%;
 }
