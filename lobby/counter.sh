@@ -1,5 +1,5 @@
 function adding {
-	echo `tail -n 1 changing_file.txt` > temp_tail.txt
+	echo "`tail -n 1 changing_file.txt`" > temp_tail.txt
 	if grep -q -i "AP-STA-CONNECTED" temp_tail.txt; then 
 		mac=`tail -n 1 changing_file.txt | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'`
 		if ! grep -q -i "$mac" listado_jugadores.txt; then
