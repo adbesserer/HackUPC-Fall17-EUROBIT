@@ -11,7 +11,7 @@ n_habitante = 60
 
 def assign_role():
     r = random.randint(0,100)
-    if (r <= n_enfermera):
+    if (r <= n_enfermera*2):
         r = random.randint(0,100)
         if (r <= 50):
             role = "Enfermera"
