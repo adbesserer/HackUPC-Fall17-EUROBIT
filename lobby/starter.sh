@@ -1,8 +1,8 @@
-/home/isma/Desktop/hackthon/pruebas/lobby/reset.sh&
+./reset.sh&
 echo uno
-/home/isma/Desktop/hackthon/pruebas/lobby/counter.sh&
+./counter.sh&
 echo dos
-/home/isma/Desktop/hackthon/pruebas/lobby/addplayers.sh&
+./addplayers.sh&
 echo tres
 
 sleep $1
