@@ -9,7 +9,7 @@ n_lobo = 20
 n_enfermera = n_policia = 10
 n_habitante = 60
 
-def assign_role(role):
+def assign_role():
     r = random.randint(0,100)
     if (r <= n_enfermera):
         r = random.randint(0,100)
@@ -25,8 +25,7 @@ def assign_role(role):
 
 
 for x in range (0, n):
-    role = "Habitante"
-    role = assign_role(role)
+    role = assign_role()
     liste[x] = role
 
 
