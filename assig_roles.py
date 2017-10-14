@@ -10,8 +10,13 @@ from random import shuffle
 parser = argparse.ArgumentParser( prog= 'Role Assigner',usage= 'The script must be run with the following format: \n\n\tassig_roles.py --np NP \n\nwhere NP is the number of players that will be in the game\nThe minimum number of players is 10')
 
 parser.add_argument('--np', type = int, help = 'The number of players', nargs = 1)
-n_players = parser.parse_args().np[0]
-if n_players == None or n_players < 10:
+arg = parser.parse_args()
+if arg.np == None :
+	parser.print_help()
+	exit()
+
+n_players = arg.np[0]
+if n_players < 10:
 	parser.print_help()
 	exit()
 
@@ -35,8 +40,8 @@ def assign ():
 
 file = open('Roles_List.txt', 'w+')
 roles = assign()
-for r in roles:
-	file.write(r+'\n')
+for r in range(0,len(roles)):
+	file.write(str(r) + ' ' + roles[r]+'\n')
 file.write('-')	
 file.close()
-
+print("Roles_List.txt has been generated")
