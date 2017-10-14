@@ -1,0 +1,10 @@
+print('Welcome to the lobby')
+print('Introduce el numero de elementos a ser desplegado')
+n = input()
+liste = []
+
+for x in range (0, n):
+   liste.append(x)
+
+for x in range (0, n):
+    print(liste[x])
