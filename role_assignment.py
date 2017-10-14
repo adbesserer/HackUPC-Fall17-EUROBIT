@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import random
 
-print('Welcome to the lobby')
-print('Introduce el numero de elementos a ser desplegado')
+# La idea en principio es que este script genere un fichero de texto a ser leido por PHP
+
+#print('Welcome to the lobby')
+#print('Introduce el numero de elementos a ser desplegado')
 n = input()
 liste = {}
 n_lobo = 20
@@ -14,13 +16,13 @@ def assign_role():
     if (r <= n_enfermera*2):
         r = random.randint(0,100)
         if (r <= 50):
-            role = "Enfermera"
+            role = "Nurse"
         else:
-            role = "Policia"
+            role = "Guard"
     elif (r <= n_lobo):
-        role = "Lobo"
+        role = "Wolf"
     elif (r <= n_habitante):
-        role = "Habitante"
+        role = "Villager"
     return role
 
 
@@ -29,7 +31,7 @@ for x in range (0, n):
     liste[x] = role
 
 
-print "Numero de jugador y rol:"
+#print "Player ID and role:"
 
 for key, value in liste.items():
     print (key, value)
