@@ -2,6 +2,9 @@
 
 import argparse
 from random import shuffle
+from random import choice
+from string import digits
+import json
 
 #######################################################################################
 #                           T R A T A R   A R G U M E N T O S                         #
@@ -20,6 +23,8 @@ if n_players < 10:
 	parser.print_help()
 	exit()
 
+#assig = {} 	# key = MAC, value = [ID, ROLE]
+
 #######################################################################################
 #                                D E F F U N C S                                      #
 #######################################################################################
@@ -33,15 +38,45 @@ def assign ():
 	shuffle(roles)
 	return roles
 
+def gen_IDs ():
+	IDs = []
+	for i in range(0,n_players):
+		IDs.append('Player_'+str(i+1))
+	return IDs	
 
 #######################################################################################
-#                                       M A I N                                       #
+#                                  I N   &   O U T                                #
 #######################################################################################
 
-file = open('Roles_List.txt', 'w+')
-roles = assign()
-for r in range(0,len(roles)):
-	file.write(str(r) + ' ' + roles[r]+'\n')
-file.write('-')	
-file.close()
-print("Roles_List.txt has been generated")
+##### R E A D   M A C S #####
+#file = open('lista_macs.txt','r')
+#macs = file.readlines()
+#file.close()
+
+roles 	= assign()
+IDs 	= gen_IDs()
+##### G E N E R A T E   R O L E S #####
+
+#if len(macs)!=len(roles) :		#check errors
+#	print('THE NUMBER OF ROLES IS UNEQUAL TO THE NUMBER OF MACS')
+#	print('Roles: '+ len(roles))
+#	print('MAC Addresses: '+ len(macs))
+#	exit()
+
+idrole = {}
+for i in range (0,len(roles)):
+	idrole[IDs[i]] = roles[i]
+
+with open('id_role.txt','w') as outfile:
+	json.dump(idrole,outfile)
+	
+#file = open('id_role.txt', 'w+')		#output a file with IDs and their roles
+#for i in range(0,len(roles)):
+#	file.write(IDs[i] + ' ' + roles[i]+'\n')
+#file.close()
+
+#file = open('id_MAC.txt', 'w+')		#output a file with IDs and their MAC Addresses
+#for i in range(0,len(macs)):
+#	file.write(IDs[i] + ' ' + macs[i])
+#file.close()
+
