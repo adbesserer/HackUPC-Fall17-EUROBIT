@@ -5,4 +5,4 @@ Funcionamiento:
 	-nplayers es el fichero en el que se almacena el numero de jugadores
 	-changing_file es el log
 	-reset.sh es el script que resetea ell numero de jugaores y el listado de jugadores
-
+	-starter es el script que ejecuta todos los demás. Debe pasarsele como parametro el numero de segundos que se tiene para ejecutar.
